@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="/use_sim_time" value="true" />
+  <!-- start Webots -->
+  <arg name="no_gui" default="false," doc="Start Webots with minimal GUI"/>
+  <include file="$(find webots_ros)/launch/webots.launch">
+    <arg name="mode" value="realtime"/>
+    <arg name="no_gui" value="$(arg no_gui)"/>
+    <arg name="world" value="$(find steering_robotsim)/world/steering_robot.wbt"/>
+  </include>
+
+</launch>
